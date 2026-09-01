@@ -81,7 +81,7 @@ export default function BlogPost() {
       <section className="bg-ivory-dim py-20">
         <Container>
           <Reveal>
-            <h2 className="font-display text-2xl text-charcoal md:text-3xl">More from the journal</h2>
+            <h2 className="font-display text-2xl text-forest md:text-3xl">More from the journal</h2>
           </Reveal>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {related.map((p, i) => (
@@ -93,7 +93,7 @@ export default function BlogPost() {
                     ratio="landscape"
                     className="rounded-2xl transition-transform duration-500 group-hover:scale-105"
                   />
-                  <p className="mt-3 font-display text-base leading-snug text-charcoal group-hover:text-terracotta">{p.title}</p>
+                  <p className="mt-3 font-display text-base leading-snug text-forest group-hover:text-terracotta">{p.title}</p>
                 </Link>
               </Reveal>
             ))}

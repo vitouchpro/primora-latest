@@ -50,7 +50,7 @@ export function Chatbot() {
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? 'Close chat assistant' : 'Open chat assistant'}
-        className="fixed bottom-24 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-charcoal text-ivory shadow-lg shadow-black/20"
+        className="fixed bottom-24 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-forest text-ivory shadow-lg shadow-black/20"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1.2, type: 'spring', stiffness: 200, damping: 16 }}
@@ -75,8 +75,8 @@ export function Chatbot() {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="fixed bottom-40 right-6 z-40 flex h-[28rem] w-[22rem] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-2xl border border-line bg-ivory shadow-2xl"
           >
-            <div className="flex items-center gap-3 bg-charcoal px-5 py-4 text-ivory">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gold font-display text-charcoal">P</div>
+            <div className="flex items-center gap-3 bg-forest px-5 py-4 text-ivory">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gold font-display text-forest">P</div>
               <div>
                 <p className="text-sm font-semibold">PRIMORA Assistant</p>
                 <p className="text-xs text-ivory/60">Usually replies instantly</p>
@@ -88,7 +88,7 @@ export function Chatbot() {
                 <div key={i} className={`flex ${m.from === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div
                     className={`max-w-[85%] rounded-2xl px-4 py-2 text-sm leading-relaxed ${
-                      m.from === 'user' ? 'bg-gold text-charcoal' : 'bg-white text-charcoal shadow-sm'
+                      m.from === 'user' ? 'bg-gold text-forest' : 'bg-white text-forest shadow-sm'
                     }`}
                   >
                     {m.text}
@@ -123,7 +123,7 @@ export function Chatbot() {
                     <option>Renovation</option>
                     <option>Design consultation only</option>
                   </select>
-                  <button type="submit" className="w-full rounded-lg bg-charcoal py-2 text-sm font-semibold text-ivory">
+                  <button type="submit" className="w-full rounded-lg bg-forest py-2 text-sm font-semibold text-ivory">
                     Send my details
                   </button>
                 </form>
@@ -138,7 +138,7 @@ export function Chatbot() {
                       key={opt.label}
                       to={opt.href}
                       onClick={() => setOpen(false)}
-                      className="rounded-full border border-charcoal/20 px-3 py-1.5 text-xs font-medium text-charcoal hover:border-gold hover:text-gold"
+                      className="rounded-full border border-forest/20 px-3 py-1.5 text-xs font-medium text-forest hover:border-gold hover:text-gold"
                     >
                       {opt.label}
                     </Link>
@@ -157,7 +157,7 @@ export function Chatbot() {
                       key={opt.label}
                       type="button"
                       onClick={() => goTo(opt.next!, opt.label)}
-                      className="rounded-full border border-charcoal/20 px-3 py-1.5 text-xs font-medium text-charcoal hover:border-gold hover:text-gold"
+                      className="rounded-full border border-forest/20 px-3 py-1.5 text-xs font-medium text-forest hover:border-gold hover:text-gold"
                     >
                       {opt.label}
                     </button>

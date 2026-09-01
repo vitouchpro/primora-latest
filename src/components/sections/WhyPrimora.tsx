@@ -18,16 +18,23 @@ export function WhyPrimora() {
       <Container>
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow>Our Specialities</Eyebrow>
-          <h2 className="font-display text-3xl text-charcoal md:text-4xl">Why you'll love working with PRIMORA</h2>
+          <h2 className="font-display text-3xl text-forest md:text-4xl">Why you'll love working with PRIMORA</h2>
         </Reveal>
 
         <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {FEATURES.map((f, i) => (
-            <Reveal key={f.title} delay={i * 0.08} className="text-center">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-ivory-dim text-terracotta">
-                <ServiceIcon name={f.icon} />
+            <Reveal key={f.title} delay={i * 0.08} className="group text-center">
+              <div className="relative mx-auto mb-4 flex h-14 w-14 items-center justify-center">
+                {/* Gold ring expands outward as the icon is approached. */}
+                <span
+                  className="absolute inset-0 rounded-full border border-gold/0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:border-gold/50"
+                  aria-hidden="true"
+                />
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-sage-tint text-forest transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:bg-forest group-hover:text-gold">
+                  <ServiceIcon name={f.icon} />
+                </span>
               </div>
-              <h3 className="font-display text-lg text-charcoal">{f.title}</h3>
+              <h3 className="font-display text-lg text-forest">{f.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-charcoal-soft">{f.text}</p>
             </Reveal>
           ))}

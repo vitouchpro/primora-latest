@@ -41,7 +41,7 @@ export default function ProjectsIndex() {
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`rounded-full border px-5 py-2 text-sm font-medium transition-colors ${
-                  filter === cat ? 'border-charcoal bg-charcoal text-ivory' : 'border-line text-charcoal-soft hover:border-gold hover:text-gold'
+                  filter === cat ? 'border-charcoal bg-forest text-ivory' : 'border-line text-charcoal-soft hover:border-gold hover:text-gold'
                 }`}
               >
                 {cat}
@@ -61,7 +61,7 @@ export default function ProjectsIndex() {
                   <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-gold">
                     {project.category} · {project.bhk}
                   </p>
-                  <h2 className="mt-1 font-display text-lg text-charcoal">{project.title}</h2>
+                  <h2 className="mt-1 font-display text-lg text-forest">{project.title}</h2>
                   <p className="mt-1 text-sm text-charcoal-soft">
                     {project.location} · {project.sqft.toLocaleString()} sq ft
                   </p>

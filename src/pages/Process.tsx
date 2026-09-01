@@ -28,14 +28,14 @@ export default function Process() {
             {PROCESS_STEPS.map((step, i) => (
               <Reveal key={step.number} delay={i * 0.08} className="relative flex gap-8 pb-14 last:pb-0">
                 <div className="flex flex-col items-center">
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-charcoal font-display text-lg text-gold">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-forest font-display text-lg text-gold">
                     {step.number}
                   </span>
                   {i < PROCESS_STEPS.length - 1 && <span className="mt-2 w-px flex-1 bg-line" />}
                 </div>
                 <div className="pt-2">
                   <div className="flex flex-wrap items-baseline gap-3">
-                    <h2 className="font-display text-2xl text-charcoal">{step.title}</h2>
+                    <h2 className="font-display text-2xl text-forest">{step.title}</h2>
                     <span className="text-xs font-semibold uppercase tracking-wide text-gold">{step.duration}</span>
                   </div>
                   <p className="mt-3 max-w-xl leading-relaxed text-charcoal-soft">{step.description}</p>
@@ -46,7 +46,7 @@ export default function Process() {
         </Container>
       </section>
 
-      <section className="bg-charcoal py-16 text-ivory">
+      <section className="bg-forest py-16 text-ivory">
         <Container className="text-center">
           <Reveal>
             <h2 className="font-display text-2xl md:text-3xl">Every project is backed by a {SITE.warrantyYears}-year warranty</h2>

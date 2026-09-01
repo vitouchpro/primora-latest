@@ -66,7 +66,7 @@ export default function Contact() {
           <Reveal>
             {sent ? (
               <div className="rounded-2xl bg-ivory-dim p-8 text-center">
-                <h2 className="font-display text-2xl text-charcoal">Thank you, {form.name.split(' ')[0] || 'there'}!</h2>
+                <h2 className="font-display text-2xl text-forest">Thank you, {form.name.split(' ')[0] || 'there'}!</h2>
                 <p className="mt-3 text-charcoal-soft">
                   We've opened WhatsApp with your details pre-filled — just hit send and our
                   team will reply shortly. You can also reach us directly at{' '}
@@ -150,7 +150,7 @@ export default function Contact() {
                   />
                 </div>
 
-                <button type="submit" className="w-full rounded-full bg-charcoal py-3.5 text-sm font-semibold text-ivory hover:bg-gold hover:text-charcoal">
+                <button type="submit" className="w-full rounded-full bg-forest py-3.5 text-sm font-semibold text-ivory hover:bg-gold hover:text-forest">
                   Send via WhatsApp
                 </button>
                 <p className="text-center text-xs text-charcoal-soft">
@@ -162,7 +162,7 @@ export default function Contact() {
 
           <Reveal delay={0.1} className="space-y-8">
             <div>
-              <h2 className="font-display text-2xl text-charcoal">Contact details</h2>
+              <h2 className="font-display text-2xl text-forest">Contact details</h2>
               <ul className="mt-5 space-y-4 text-charcoal-soft">
                 <li>
                   <span className="block text-xs font-semibold uppercase tracking-wide text-gold">Studio Address</span>

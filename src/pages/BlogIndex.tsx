@@ -35,7 +35,7 @@ export default function BlogIndex() {
                     </div>
                   </div>
                   <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-gold">{post.category}</p>
-                  <h2 className="mt-1 font-display text-xl leading-snug text-charcoal group-hover:text-terracotta">
+                  <h2 className="mt-1 font-display text-xl leading-snug text-forest group-hover:text-terracotta">
                     {post.title}
                   </h2>
                   <p className="mt-2 text-sm leading-relaxed text-charcoal-soft">{post.excerpt}</p>

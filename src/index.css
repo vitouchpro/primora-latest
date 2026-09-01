@@ -1,20 +1,63 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Warm minimalist luxury palette */
-  --color-ivory: #f8f4ec;
-  --color-ivory-dim: #f0ead9;
-  --color-charcoal: #231f1a;
-  --color-charcoal-soft: #3a342c;
-  --color-gold: #b9925a;
-  --color-gold-light: #d4b483;
-  --color-terracotta: #a9583f;
+  /* ------------------------------------------------------------------
+     PRIMORA brand palette — "Modern · Warm · Timeless"
+     Sourced from the official branding board. Deep Forest is the primary
+     brand colour; Brushed Gold is the metallic accent; Terracotta is the
+     warm highlight; Warm Beige / Ivory carry the light surfaces.
+     ------------------------------------------------------------------ */
+
+  /* Primary — Deep Forest: trust, stability, nature */
+  --color-forest: #1f3d2e;
+  --color-forest-deep: #162c21;
+  --color-forest-soft: #2c5340;
+
+  /* Secondary — Sage Green: balance, calm, harmony */
+  --color-sage: #7c8f7a;
+  --color-sage-light: #a8b7a5;
+  --color-sage-tint: #e8ede6;
+
+  /* Accent — Brushed Gold: luxury, refinement */
+  --color-gold: #c9a24e;
+  --color-gold-light: #e0c489;
+  --color-gold-deep: #a5822f;
+
+  /* Warm highlight — Terracotta: warmth, energy, creativity */
+  --color-terracotta: #c56e3d;
+  --color-terracotta-soft: #d98d5f;
+
+  /* Neutrals — Warm Beige / Charcoal */
+  --color-ivory: #faf7f1;
+  --color-ivory-dim: #f2ece0;
+  --color-beige: #e7dcc6;
+  --color-charcoal: #2b2b2b;
+  --color-charcoal-soft: #55514b;
   --color-line: #e4dcc9;
 
   --font-display: 'Fraunces', 'Georgia', serif;
   --font-sans: 'Manrope', 'Segoe UI', sans-serif;
 
+  /* Signature gold gradient used for rules, sheens and metallic text */
+  --gradient-gold: linear-gradient(
+    100deg,
+    var(--color-gold-deep) 0%,
+    var(--color-gold) 35%,
+    var(--color-gold-light) 50%,
+    var(--color-gold) 65%,
+    var(--color-gold-deep) 100%
+  );
+
+  /* Elevation tuned to the forest/warm palette rather than neutral black */
+  --shadow-soft: 0 2px 8px -2px rgb(31 61 46 / 0.08);
+  --shadow-lift: 0 18px 40px -18px rgb(31 61 46 / 0.28);
+  --shadow-deep: 0 30px 70px -28px rgb(31 61 46 / 0.42);
+
+  --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
+
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-shimmer: shimmer 2.6s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
 
   @keyframes fade-up {
     from {
@@ -24,6 +67,25 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
     }
   }
 }
@@ -49,8 +111,118 @@
   }
 
   ::selection {
-    background-color: var(--color-gold-light);
-    color: var(--color-charcoal);
+    background-color: var(--color-forest);
+    color: var(--color-gold-light);
+  }
+
+  /* Brand-consistent keyboard focus ring across every interactive element */
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Metallic gold text, used for numerals and small brand flourishes. */
+  .text-metallic {
+    background: var(--gradient-gold);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Animated version of the above — a slow sheen travelling across glyphs. */
+  .text-metallic-shimmer {
+    background: var(--gradient-gold);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: var(--animate-shimmer);
+  }
+
+  /* Thin gold rule used beneath headings, as on the brand board. */
+  .rule-gold {
+    background: var(--gradient-gold);
+    height: 1px;
+    width: 100%;
+  }
+
+  /* Hairline gold divider with a centred diamond, mirroring the logo lockup. */
+  .rule-diamond {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .rule-diamond::before,
+  .rule-diamond::after {
+    content: '';
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  }
+
+  /*
+   * Sheen sweep for primary buttons. The pseudo-element rides across the
+   * button on hover, reading as light catching a brushed-metal surface.
+   */
+  .btn-sheen {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-sheen::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: translateX(-120%) skewX(-20deg);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(255 255 255 / 0.28),
+      transparent
+    );
+    transition: transform 0.75s var(--ease-brand);
+  }
+  .btn-sheen:hover::after {
+    transform: translateX(120%) skewX(-20deg);
+  }
+
+  /* Nav underline that grows from the left on hover / active. */
+  .nav-underline {
+    position: relative;
+  }
+  .nav-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 1.5px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: var(--gradient-gold);
+    transition: transform 0.4s var(--ease-brand);
+  }
+  .nav-underline:hover::after,
+  .nav-underline[data-active='true']::after {
+    transform: scaleX(1);
+  }
+
+  /* Card lift shared by service, project and blog cards. */
+  .card-lift {
+    transition:
+      transform 0.45s var(--ease-brand),
+      box-shadow 0.45s var(--ease-brand),
+      border-color 0.45s var(--ease-brand);
+  }
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lift);
   }
 }
 
@@ -65,5 +237,8 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  .card-lift:hover {
+    transform: none;
   }
 }

@@ -10,7 +10,7 @@ export function FAQSection() {
       <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.4fr]">
         <Reveal>
           <Eyebrow>Frequently Asked</Eyebrow>
-          <h2 className="font-display text-3xl text-charcoal md:text-4xl">Your questions, our answers</h2>
+          <h2 className="font-display text-3xl text-forest md:text-4xl">Your questions, our answers</h2>
           <p className="mt-4 text-charcoal-soft">
             Can't find what you're looking for? Message us directly on WhatsApp or use the
             chat assistant in the corner of your screen.

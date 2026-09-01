@@ -3,18 +3,21 @@ import type { ReactNode } from 'react'
 
 interface BaseProps {
   children: ReactNode
-  variant?: 'primary' | 'secondary' | 'ghost'
+  variant?: 'primary' | 'secondary' | 'ghost' | 'gold'
   className?: string
 }
 
 const VARIANTS: Record<NonNullable<BaseProps['variant']>, string> = {
-  primary: 'bg-charcoal text-ivory hover:bg-gold hover:text-charcoal',
-  secondary: 'bg-transparent text-charcoal border border-charcoal hover:bg-charcoal hover:text-ivory',
-  ghost: 'bg-transparent text-charcoal hover:text-gold underline underline-offset-4',
+  // Deep Forest is the brand's primary action colour; gold on hover.
+  primary: 'btn-sheen bg-forest text-ivory hover:bg-forest-deep hover:text-gold-light shadow-soft hover:shadow-lift',
+  // Brushed gold — reserved for CTAs sitting on dark forest surfaces.
+  gold: 'btn-sheen bg-gold text-forest-deep hover:bg-gold-light shadow-soft hover:shadow-lift',
+  secondary: 'bg-transparent text-forest border border-forest/35 hover:border-forest hover:bg-forest hover:text-ivory',
+  ghost: 'bg-transparent text-forest hover:text-gold-deep underline underline-offset-4 decoration-gold/40 hover:decoration-gold',
 }
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold tracking-wide transition-colors duration-300'
+  'group/btn inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold tracking-wide transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 active:translate-y-0'
 
 export function Button({
   children,

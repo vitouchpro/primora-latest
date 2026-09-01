@@ -69,10 +69,10 @@ export default function ServiceDetail() {
 
           <div>
             <Reveal>
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-charcoal text-gold">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-forest text-gold">
                 <ServiceIcon name={service.icon} />
               </div>
-              <h2 className="font-display text-2xl text-charcoal">What's included</h2>
+              <h2 className="font-display text-2xl text-forest">What's included</h2>
               <ul className="mt-5 space-y-3">
                 {service.inclusions.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-charcoal-soft">
@@ -84,7 +84,7 @@ export default function ServiceDetail() {
             </Reveal>
 
             <Reveal delay={0.1} className="mt-10">
-              <h2 className="font-display text-2xl text-charcoal">How it works</h2>
+              <h2 className="font-display text-2xl text-forest">How it works</h2>
               <ol className="mt-5 space-y-4">
                 {service.process.map((step, i) => (
                   <li key={step} className="flex items-start gap-4">
@@ -103,7 +103,7 @@ export default function ServiceDetail() {
       <section className="bg-ivory-dim py-20">
         <Container>
           <Reveal>
-            <h2 className="font-display text-2xl text-charcoal md:text-3xl">Related projects</h2>
+            <h2 className="font-display text-2xl text-forest md:text-3xl">Related projects</h2>
           </Reveal>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {relatedProjects.map((project, i) => (
@@ -115,7 +115,7 @@ export default function ServiceDetail() {
                     ratio="square"
                     className="rounded-2xl transition-transform duration-500 group-hover:scale-105"
                   />
-                  <p className="mt-3 font-display text-base text-charcoal">{project.title}</p>
+                  <p className="mt-3 font-display text-base text-forest">{project.title}</p>
                   <p className="text-xs text-charcoal-soft">{project.location}</p>
                 </Link>
               </Reveal>
@@ -127,14 +127,14 @@ export default function ServiceDetail() {
       <section className="py-20">
         <Container>
           <Reveal>
-            <h2 className="font-display text-2xl text-charcoal md:text-3xl">Other services you may need</h2>
+            <h2 className="font-display text-2xl text-forest md:text-3xl">Other services you may need</h2>
           </Reveal>
           <div className="mt-10 flex flex-wrap gap-3">
             {otherServices.map((s) => (
               <Link
                 key={s.slug}
                 to={`/services/${s.slug}`}
-                className="rounded-full border border-line px-5 py-2.5 text-sm font-medium text-charcoal hover:border-gold hover:text-gold"
+                className="rounded-full border border-line px-5 py-2.5 text-sm font-medium text-forest hover:border-gold hover:text-gold"
               >
                 {s.shortTitle}
               </Link>

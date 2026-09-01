@@ -28,7 +28,7 @@ export default function Team() {
             {TEAM.map((member, i) => (
               <Reveal key={member.name} delay={(i % 3) * 0.08}>
                 <PlaceholderImage label={member.name} hue={member.hue} ratio="portrait" className="rounded-2xl" />
-                <h2 className="mt-5 font-display text-xl text-charcoal">{member.name}</h2>
+                <h2 className="mt-5 font-display text-xl text-forest">{member.name}</h2>
                 <p className="text-sm font-semibold text-gold">{member.role}</p>
                 <p className="mt-2 text-sm leading-relaxed text-charcoal-soft">{member.bio}</p>
               </Reveal>
@@ -40,7 +40,7 @@ export default function Team() {
       <section className="bg-ivory-dim py-20">
         <Container className="mx-auto max-w-2xl text-center">
           <Reveal>
-            <p className="font-display text-2xl italic leading-relaxed text-charcoal md:text-3xl">
+            <p className="font-display text-2xl italic leading-relaxed text-forest md:text-3xl">
               "{FOUNDERS_QUOTE.quote}"
             </p>
             <p className="mt-5 text-sm text-charcoal-soft">

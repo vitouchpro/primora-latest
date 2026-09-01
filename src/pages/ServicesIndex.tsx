@@ -30,12 +30,12 @@ export default function ServicesIndex() {
               <Reveal key={service.slug} delay={(i % 3) * 0.08}>
                 <Link
                   to={`/services/${service.slug}`}
-                  className="group flex h-full flex-col rounded-2xl border border-line bg-ivory p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-lg hover:shadow-charcoal/5"
+                  className="group flex h-full flex-col rounded-2xl border border-line bg-ivory p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-lg hover:shadow-forest/5"
                 >
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-ivory-dim text-terracotta transition-colors group-hover:bg-gold group-hover:text-charcoal">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-ivory-dim text-terracotta transition-colors group-hover:bg-gold group-hover:text-forest">
                     <ServiceIcon name={service.icon} />
                   </div>
-                  <h2 className="font-display text-xl text-charcoal">{service.title}</h2>
+                  <h2 className="font-display text-xl text-forest">{service.title}</h2>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-charcoal-soft">{service.summary}</p>
                   <span className="mt-5 text-xs font-semibold uppercase tracking-wide text-gold">Explore service →</span>
                 </Link>

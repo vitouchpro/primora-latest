@@ -9,7 +9,7 @@ export default function NotFound() {
       <section className="flex min-h-[60vh] items-center py-24">
         <Container className="text-center">
           <p className="font-display text-7xl text-gold">404</p>
-          <h1 className="mt-4 font-display text-3xl text-charcoal">We couldn't find that page</h1>
+          <h1 className="mt-4 font-display text-3xl text-forest">We couldn't find that page</h1>
           <p className="mx-auto mt-3 max-w-md text-charcoal-soft">
             The page you're looking for may have moved. Let's get you back to somewhere useful.
           </p>

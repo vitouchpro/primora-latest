@@ -52,7 +52,7 @@ export default function ProjectDetail() {
             {stats.map((s) => (
               <div key={s.label}>
                 <p className="text-xs font-semibold uppercase tracking-wide text-gold">{s.label}</p>
-                <p className="mt-1 font-display text-lg text-charcoal">{s.value}</p>
+                <p className="mt-1 font-display text-lg text-forest">{s.value}</p>
               </div>
             ))}
           </Reveal>
@@ -70,7 +70,7 @@ export default function ProjectDetail() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="font-display text-2xl text-charcoal md:text-3xl">The design story</h2>
+            <h2 className="font-display text-2xl text-forest md:text-3xl">The design story</h2>
             {project.narrative.map((p) => (
               <p key={p} className="mt-4 leading-relaxed text-charcoal-soft">
                 {p}
@@ -79,7 +79,7 @@ export default function ProjectDetail() {
 
             {project.testimonial && (
               <blockquote className="mt-8 rounded-2xl border-l-4 border-gold bg-ivory-dim p-6">
-                <p className="font-display text-lg italic text-charcoal">"{project.testimonial.quote}"</p>
+                <p className="font-display text-lg italic text-forest">"{project.testimonial.quote}"</p>
                 <p className="mt-3 text-sm text-charcoal-soft">— {project.testimonial.author}</p>
               </blockquote>
             )}
@@ -90,7 +90,7 @@ export default function ProjectDetail() {
       <section className="bg-ivory-dim py-20">
         <Container>
           <Reveal>
-            <h2 className="font-display text-2xl text-charcoal md:text-3xl">More projects</h2>
+            <h2 className="font-display text-2xl text-forest md:text-3xl">More projects</h2>
           </Reveal>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {related.map((p, i) => (
@@ -102,7 +102,7 @@ export default function ProjectDetail() {
                     ratio="square"
                     className="rounded-2xl transition-transform duration-500 group-hover:scale-105"
                   />
-                  <p className="mt-3 font-display text-base text-charcoal">{p.title}</p>
+                  <p className="mt-3 font-display text-base text-forest">{p.title}</p>
                   <p className="text-xs text-charcoal-soft">{p.location}</p>
                 </Link>
               </Reveal>

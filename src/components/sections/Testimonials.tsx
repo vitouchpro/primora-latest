@@ -4,6 +4,7 @@ import { Container } from '../ui/Container'
 import { Reveal } from '../ui/Reveal'
 import { Eyebrow } from '../ui/Eyebrow'
 import { REVIEWS } from '../../data/reviews'
+import { EASE_BRAND } from '../../lib/motion'
 
 function Stars({ count }: { count: number }) {
   return (
@@ -28,7 +29,7 @@ export function Testimonials() {
       <Container>
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow>Clients' Words</Eyebrow>
-          <h2 className="font-display text-3xl text-charcoal md:text-4xl">Reviews from PRIMORA homeowners</h2>
+          <h2 className="font-display text-3xl text-forest md:text-4xl">Reviews from PRIMORA homeowners</h2>
         </Reveal>
 
         <div className="relative mt-14 min-h-[260px]">
@@ -38,15 +39,16 @@ export function Testimonials() {
               initial={{ opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -24 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.4, ease: EASE_BRAND }}
               className="grid grid-cols-1 gap-6 md:grid-cols-3"
             >
               {current.map((review) => (
-                <div key={review.name} className="flex flex-col rounded-2xl bg-ivory p-6 shadow-sm">
+                <div key={review.name} className="card-lift relative flex flex-col overflow-hidden rounded-2xl border border-line bg-ivory p-6 shadow-soft hover:border-gold/50">
+                  <span className="pointer-events-none absolute -top-3 right-4 font-display text-7xl leading-none text-sage-tint select-none" aria-hidden="true">”</span>
                   <Stars count={review.rating} />
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-charcoal-soft">"{review.text}"</p>
+                  <p className="relative mt-4 flex-1 text-sm leading-relaxed text-charcoal-soft">"{review.text}"</p>
                   <div className="mt-5">
-                    <p className="font-display text-base text-charcoal">{review.name}</p>
+                    <p className="font-display text-base text-forest">{review.name}</p>
                     <p className="text-xs text-charcoal-soft">
                       {review.role} · {review.city}
                     </p>
@@ -63,7 +65,7 @@ export function Testimonials() {
               key={i}
               onClick={() => setIndex(i)}
               aria-label={`Show reviews group ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${i === index ? 'w-6 bg-gold' : 'w-2 bg-charcoal/20'}`}
+              className={`h-2 rounded-full transition-all ${i === index ? 'w-7 bg-gold' : 'w-2 bg-forest/20 hover:bg-forest/40'}`}
             />
           ))}
         </div>

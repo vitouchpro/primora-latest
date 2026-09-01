@@ -59,7 +59,7 @@ export default function Reviews() {
                 <Stars count={review.rating} />
                 <p className="mt-4 text-sm leading-relaxed text-charcoal-soft">"{review.text}"</p>
                 <div className="mt-5">
-                  <p className="font-display text-base text-charcoal">{review.name}</p>
+                  <p className="font-display text-base text-forest">{review.name}</p>
                   <p className="text-xs text-charcoal-soft">
                     {review.role} · {review.city}
                     {review.project ? ` · ${review.project}` : ''}

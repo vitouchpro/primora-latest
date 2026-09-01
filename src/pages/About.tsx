@@ -37,7 +37,7 @@ export default function About() {
             <PlaceholderImage label="PRIMORA Founders in Studio" hue={20} ratio="portrait" className="rounded-3xl" />
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="font-display text-3xl text-charcoal">Our story</h2>
+            <h2 className="font-display text-3xl text-forest">Our story</h2>
             <p className="mt-5 leading-relaxed text-charcoal-soft">
               PRIMORA began with a simple frustration: too many "luxury" interior projects in
               Chennai looked interchangeable — the same materials, the same layouts, dressed up
@@ -73,7 +73,7 @@ export default function About() {
         </Container>
       </section>
 
-      <section className="bg-charcoal py-20 text-ivory">
+      <section className="bg-forest py-20 text-ivory">
         <Container className="mx-auto max-w-3xl text-center">
           <Reveal>
             <svg viewBox="0 0 32 24" className="mx-auto mb-6 h-8 w-10 fill-gold">
@@ -90,7 +90,7 @@ export default function About() {
       <section className="py-24">
         <Container>
           <Reveal className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-3xl text-charcoal md:text-4xl">Our journey</h2>
+            <h2 className="font-display text-3xl text-forest md:text-4xl">Our journey</h2>
           </Reveal>
           <div className="mx-auto mt-14 max-w-2xl border-l border-line pl-8">
             {MILESTONES.map((m, i) => (

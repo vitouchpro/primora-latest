@@ -13,7 +13,7 @@ export function AboutTeaser() {
         </Reveal>
         <Reveal delay={0.1}>
           <Eyebrow>About PRIMORA</Eyebrow>
-          <h2 className="font-display text-3xl text-charcoal md:text-4xl">
+          <h2 className="font-display text-3xl text-forest md:text-4xl">
             Your home is a reflection of how you want to live.
           </h2>
           <p className="mt-5 leading-relaxed text-charcoal-soft">

@@ -14,7 +14,7 @@ export function BlogTeaser() {
         <Reveal className="flex flex-col items-end justify-between gap-6 sm:flex-row">
           <div>
             <Eyebrow>From the Journal</Eyebrow>
-            <h2 className="font-display text-3xl text-charcoal md:text-4xl">Design guides & insights</h2>
+            <h2 className="font-display text-3xl text-forest md:text-4xl">Design guides & insights</h2>
           </div>
           <Button to="/blog" variant="ghost">
             Visit the blog →
@@ -31,7 +31,7 @@ export function BlogTeaser() {
                   </div>
                 </div>
                 <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-gold">{post.category}</p>
-                <h3 className="mt-1 font-display text-lg leading-snug text-charcoal group-hover:text-terracotta">
+                <h3 className="mt-1 font-display text-lg leading-snug text-forest group-hover:text-terracotta">
                   {post.title}
                 </h3>
                 <p className="mt-2 text-xs text-charcoal-soft">{post.readTime}</p>
